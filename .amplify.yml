@@ -1,6 +1,11 @@
 version: 1
 
+# 👇 Runtime override to force Node.js 20
 frontend:
+  runtime:
+    name: nodejs
+    version: 20
+
   phases:
     preBuild:
       commands:
@@ -10,10 +15,12 @@ frontend:
     build:
       commands:
         - npm run build
+
   artifacts:
     baseDirectory: dist
     files:
       - '**/*'
+
   cache:
     paths:
       - .npm/**/*
