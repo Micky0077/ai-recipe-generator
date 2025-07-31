@@ -1,11 +1,11 @@
 version: 1
 
-# 👇 Runtime override to force Node.js 20
-frontend:
-  runtime:
-    name: nodejs
-    version: 20
+# ✅ MUST be at root level — not under `frontend`
+runtime:
+  name: nodejs
+  version: 20
 
+frontend:
   phases:
     preBuild:
       commands:
